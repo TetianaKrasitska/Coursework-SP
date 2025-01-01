@@ -1,0 +1,45 @@
+{Prog3}
+STARTPROGRAM 
+STARTBLOK
+VARIABLE INT16 _Aaaaa,_Aaaa2,_Bbbbb,_Xxxxx,_Cccc1,_Cccc2;
+INPUT _Aaaaa;
+INPUT _Bbbbb;
+FOR _Aaaa2<==_Aaaaa TO _Bbbbb DO
+	OUTPUT _Aaaa2 * _Aaaa2;
+
+FOR _Aaaa2<==_Bbbbb TO _Aaaaa DO
+	OUTPUT _Aaaa2 * _Aaaa2;
+
+_Xxxxx<==0;
+_Cccc1<==0;
+WHILE _Cccc1 << _Aaaaa 
+STARTBLOK
+	_Cccc2<==0;
+	WHILE _Cccc2 << _Bbbbb
+	STARTBLOK	
+		_Xxxxx<==_Xxxxx + 1;
+		_Cccc2<==_Cccc2 + 1;
+	ENDBLOK
+	END WHILE
+_Cccc1<==_Cccc1 + 1;
+ENDBLOK	
+END WHILE
+OUTPUT _Xxxxx;
+
+_Xxxxx<==0;
+_Cccc1<==1;
+REPEAT
+STARTBLOK
+  _Cccc2<==1;
+  REPEAT
+  STARTBLOK
+    _Xxxxx<==_Xxxxx + 1;
+    _Cccc2<==_Cccc2 + 1;
+	ENDBLOK
+  UNTIL !!(_Cccc2 >> _Bbbbb)
+  _Cccc1 <== _Cccc1 + 1;
+ ENDBLOK
+UNTIL !!(_Cccc1 >> _Aaaaa)
+OUTPUT _Xxxxx;
+
+ENDBLOK

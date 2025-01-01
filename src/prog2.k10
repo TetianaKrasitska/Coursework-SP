@@ -1,0 +1,57 @@
+{Prog2}
+STARTPROGRAM 
+STARTBLOK
+VARIABLE INT16  _Aaaaa,_Bbbbb,_Ccccc;
+INPUT _Aaaaa;
+INPUT _Bbbbb;
+INPUT _Ccccc;
+IF(_Aaaaa >> _Bbbbb)
+STARTBLOK
+	IF(_Aaaaa >> _Ccccc)
+	STARTBLOK
+		GOTO Abigger;		
+	ENDBLOK
+	ELSE
+	STARTBLOK
+		OUTPUT _Ccccc;
+		GOTO OutofIF;
+		Abigger:		
+		OUTPUT _Aaaaa;
+		GOTO OutofIF;
+	ENDBLOK
+ENDBLOK	
+IF(_Bbbbb << _Ccccc)
+STARTBLOK
+	OUTPUT _Ccccc;
+ENDBLOK	
+ELSE
+STARTBLOK
+	OUTPUT _Bbbbb;
+ENDBLOK
+OutofIF:	
+
+IF((_Aaaaa = _Bbbbb) && (_Aaaaa = _Ccccc) && (_Bbbbb = _Ccccc))
+STARTBLOK
+	OUTPUT 1;
+ENDBLOK	
+ELSE
+STARTBLOK
+	OUTPUT 0;
+ENDBLOK
+IF((_Aaaaa << 0) || (_Bbbbb << 0) || (_Ccccc << 0))
+STARTBLOK
+	OUTPUT -1;
+ENDBLOK	
+ELSE
+STARTBLOK
+	OUTPUT 0;
+ENDBLOK
+IF(!!(_Aaaaa << (_Bbbbb + _Ccccc)))
+STARTBLOK
+	OUTPUT(10);
+ENDBLOK	
+ELSE
+STARTBLOK
+	OUTPUT(0);
+ENDBLOK
+ENDBLOK

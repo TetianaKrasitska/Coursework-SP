@@ -1,0 +1,17 @@
+{Prog1}
+STARTPROGRAM 
+STARTBLOK
+VARIABLE INT16 _Aaaaa,_Bbbbb,_Xxxxx,_Yyyyy;
+INPUT _Aaaaa;
+INPUT _Bbbbb;
+OUTPUT _Aaaaa + _Bbbbb;
+OUTPUT _Aaaaa - _Bbbbb;
+OUTPUT _Aaaaa * _Bbbbb;
+OUTPUT _Aaaaa DIV _Bbbbb;
+OUTPUT _Aaaaa MOD _Bbbbb;
+
+_Xxxxx<==(_Aaaaa - _Bbbbb) * 10 + (_Aaaaa + _Bbbbb) DIV 10;
+_Yyyyy<==_Xxxxx + (_Xxxxx MOD 10);
+OUTPUT _Xxxxx;
+OUTPUT _Yyyyy;
+ENDBLOK
